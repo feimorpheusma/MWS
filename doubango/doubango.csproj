@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{74DEE506-9700-4A7D-9CD0-E7D79A72542B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>doubango</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="org.doubango.tinyWRAP\ActionConfig.cs" />
+    <Compile Include="org.doubango.tinyWRAP\AudioResampler.cs" />
+    <Compile Include="org.doubango.tinyWRAP\CallSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\Codec.cs" />
+    <Compile Include="org.doubango.tinyWRAP\DDebugCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\DialogEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\InfoEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\InfoSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\InviteEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\InviteSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MediaContent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MediaContentCPIM.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MediaSessionMgr.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MessagingEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MessagingSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MsrpCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MsrpEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MsrpMessage.cs" />
+    <Compile Include="org.doubango.tinyWRAP\MsrpSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\OptionsEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\OptionsSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyAudioConsumer.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyAudioConsumerCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyAudioProducer.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyAudioProducerCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyPlugin.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyPluginMgr.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyPluginMgrCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyVideoConsumer.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyVideoConsumerCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyVideoFrame.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyVideoProducer.cs" />
+    <Compile Include="org.doubango.tinyWRAP\ProxyVideoProducerCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\PublicationEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\PublicationSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\RegistrationEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\RegistrationSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\RPMessage.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SafeObject.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SdpMessage.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SipCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SipEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SipMessage.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SipSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SipStack.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SipUri.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SMSData.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SMSEncoder.cs" />
+    <Compile Include="org.doubango.tinyWRAP\StackEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SubscriptionEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\SubscriptionSession.cs" />
+    <Compile Include="org.doubango.tinyWRAP\T140Callback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\T140CallbackData.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tdav_codec_id_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\thttp_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tinyWRAP.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tinyWRAPPINVOKE.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_bandwidth_level_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_chroma_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_codec_id_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_mode_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_pref_video_size_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_profile_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_qos_strength_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_qos_stype_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_srtp_mode_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_srtp_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmedia_t140_data_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmsrp_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tmsrp_request_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_info_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_invite_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_message_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_options_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_publish_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_register_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_request_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\tsip_subscribe_event_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\twrap_media_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\twrap_proxy_plugin_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\twrap_rpmessage_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\twrap_sms_type_t.cs" />
+    <Compile Include="org.doubango.tinyWRAP\XcapCallback.cs" />
+    <Compile Include="org.doubango.tinyWRAP\XcapEvent.cs" />
+    <Compile Include="org.doubango.tinyWRAP\XcapMessage.cs" />
+    <Compile Include="org.doubango.tinyWRAP\XcapSelector.cs" />
+    <Compile Include="org.doubango.tinyWRAP\XcapStack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

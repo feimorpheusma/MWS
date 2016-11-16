@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48B3705B-DDDA-4D93-AD0E-4E8B0EAE4A4E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MWS</RootNamespace>
+    <AssemblyName>MWS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\ThirdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\IScreenService.cs" />
+    <Compile Include="Services\ScreenService.cs" />
+    <Compile Include="Services\SoundService.cs" />
+    <Compile Include="Services\Win32ServiceManager.cs" />
+    <Compile Include="Utils\MySoundPlayer.cs" />
+    <Compile Include="Utils\NativeMethods.cs" />
+    <Compile Include="Utils\VideoDisplay.cs" />
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_txl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_cs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_dj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_hf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_location1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_pb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_rz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_ts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_txl1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-form1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Menu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\bg_login_form.png" />
+    <None Include="Resources\bg_video.png" />
+    <None Include="Resources\bg_title.png" />
+    <None Include="Resources\title_bg.png" />
+    <None Include="Resources\log4net.xml" />
+    <None Include="Resources\ringtone.wav" />
+    <None Include="Resources\ringbacktone.wav" />
+    <None Include="Resources\newsms.wav" />
+    <None Include="Resources\dtmf_star.wav" />
+    <None Include="Resources\dtmf_pound.wav" />
+    <None Include="Resources\dtmf_9.wav" />
+    <None Include="Resources\dtmf_8.wav" />
+    <None Include="Resources\dtmf_7.wav" />
+    <None Include="Resources\dtmf_6.wav" />
+    <None Include="Resources\dtmf_5.wav" />
+    <None Include="Resources\dtmf_4.wav" />
+    <None Include="Resources\dtmf_3.wav" />
+    <None Include="Resources\dtmf_2.wav" />
+    <None Include="Resources\dtmf_1.wav" />
+    <None Include="Resources\dtmf_0.wav" />
+    <None Include="Resources\connevent.wav" />
+    <None Include="Resources\488.wav" />
+    <None Include="Resources\486.wav" />
+    <None Include="Resources\480.wav" />
+    <None Include="Resources\404.wav" />
+    <None Include="Resources\403.wav" />
+    <None Include="Resources\avatar.png" />
+    <None Include="Resources\avatar.bmp" />
+    <None Include="Resources\menu_zqts.png" />
+    <None Include="Resources\menu_txl.png" />
+    <None Include="Resources\menu_sfxx.png" />
+    <None Include="Resources\menu_lbhf.png" />
+    <None Include="Resources\menu_jlcs.png" />
+    <None Include="Resources\menu_jkdj.png" />
+    <None Include="Resources\menu_djpb.png" />
+    <None Include="Resources\menu_bjrz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DispCore\DispCore.csproj">
+      <Project>{600f0990-0f0d-42d7-bce1-11e5202ee798}</Project>
+      <Name>DispCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\doubango\doubango.csproj">
+      <Project>{74dee506-9700-4a7d-9cd0-e7d79a72542b}</Project>
+      <Name>doubango</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

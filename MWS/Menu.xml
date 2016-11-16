@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <item name="执勤态势" code="zqts" type="link" parameter="http://www.163.com/"/>
+  <item name="监控对讲" code="jkdj" type="link" parameter="http://www.baidu.com/"/>
+  <item name="报警日志" code="bjrz" type="url" parameter=""/>
+  <item name="收发消息" code="sfxx" type="url" parameter=""/>
+  <item name="记录查哨" code="jlcs" type="url" parameter=""/>
+  <item name="录播回放" code="lbhf" type="url" parameter=""/>
+  <item name="登记排班" code="djpb" type="url" parameter=""/>
+  <item name="通信录" code="txl" type="url" parameter=""/>
+</menu>

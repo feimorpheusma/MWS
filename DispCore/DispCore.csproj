@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{600F0990-0F0D-42D7-BCE1-11E5202EE798}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>DispCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="log4net">
+      <HintPath>..\ThirdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DispApp.Generated.data_model\device.cs" />
+    <Compile Include="DispApp.Generated.data_model\Note_t.cs" />
+    <Compile Include="DispApp.Generated.data_model\person.cs" />
+    <Compile Include="DispApp.Generated.im_iscomposing\isComposing.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\barringstate.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\barringType.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\basicType.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\emptyType.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\networkavailability.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\networkavailabilityNetwork.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\overridingwillingness.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\registrationstate.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\registrationType.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\servicedescription.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\sessionparticipation.cs" />
+    <Compile Include="DispApp.Generated.oma.pidf_pres\willingness.cs" />
+    <Compile Include="DispApp.Generated.pidf\basic.cs" />
+    <Compile Include="DispApp.Generated.pidf\contact.cs" />
+    <Compile Include="DispApp.Generated.pidf\note.cs" />
+    <Compile Include="DispApp.Generated.pidf\pidffull.cs" />
+    <Compile Include="DispApp.Generated.pidf\presence.cs" />
+    <Compile Include="DispApp.Generated.pidf\status.cs" />
+    <Compile Include="DispApp.Generated.pidf\tuple.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\actortype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\actortypes.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\classtype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\classtypes.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\descriptiontype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\devcaps.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\duplextype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\duplextypes.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\equalstype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\eventpackagestype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\eventtypes.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\extensionstype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\extensiontypes.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\higherthantype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\languagestype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\lowerthantype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\methodstype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\methodtypes.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\mobilitytype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\mobilitytypes.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\prioritytype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\prioritytypes.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\rangetype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\schemestype.cs" />
+    <Compile Include="DispApp.Generated.pidf_caps\servcapstype.cs" />
+    <Compile Include="DispApp.Generated.regingo\contact.cs" />
+    <Compile Include="DispApp.Generated.regingo\contactDisplayname.cs" />
+    <Compile Include="DispApp.Generated.regingo\contactEvent.cs" />
+    <Compile Include="DispApp.Generated.regingo\contactState.cs" />
+    <Compile Include="DispApp.Generated.regingo\contactUnknownparam.cs" />
+    <Compile Include="DispApp.Generated.regingo\reginfo.cs" />
+    <Compile Include="DispApp.Generated.regingo\reginfoState.cs" />
+    <Compile Include="DispApp.Generated.regingo\registration.cs" />
+    <Compile Include="DispApp.Generated.regingo\registrationState.cs" />
+    <Compile Include="DispApp.Generated.rpid\activeIdle.cs" />
+    <Compile Include="DispApp.Generated.rpid\activities.cs" />
+    <Compile Include="DispApp.Generated.rpid\empty.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemChoiceType.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemChoiceType1.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemChoiceType2.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemChoiceType3.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemChoiceType4.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemChoiceType5.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemChoiceType6.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemsChoiceType.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemsChoiceType1.cs" />
+    <Compile Include="DispApp.Generated.rpid\ItemsChoiceType2.cs" />
+    <Compile Include="DispApp.Generated.rpid\mood.cs" />
+    <Compile Include="DispApp.Generated.rpid\Note_t.cs" />
+    <Compile Include="DispApp.Generated.rpid\placeis.cs" />
+    <Compile Include="DispApp.Generated.rpid\placeisAudio.cs" />
+    <Compile Include="DispApp.Generated.rpid\placeisText.cs" />
+    <Compile Include="DispApp.Generated.rpid\placeisVideo.cs" />
+    <Compile Include="DispApp.Generated.rpid\placetype.cs" />
+    <Compile Include="DispApp.Generated.rpid\privacy.cs" />
+    <Compile Include="DispApp.Generated.rpid\relationship.cs" />
+    <Compile Include="DispApp.Generated.rpid\serviceclass.cs" />
+    <Compile Include="DispApp.Generated.rpid\sphere.cs" />
+    <Compile Include="DispApp.Generated.rpid\statusicon.cs" />
+    <Compile Include="DispApp.Generated.rpid\timeoffset.cs" />
+    <Compile Include="DispApp.Generated.rpid\userinput.cs" />
+    <Compile Include="DispCore.Events.Sip\InfoEventArgs.cs" />
+    <Compile Include="DispCore.Events.Sip\InfoEventTypes.cs" />
+    <Compile Include="DispCore.Events.Sip\InviteEventArgs.cs" />
+    <Compile Include="DispCore.Events.Sip\InviteEventTypes.cs" />
+    <Compile Include="DispCore.Events.Sip\MessagingEventArgs.cs" />
+    <Compile Include="DispCore.Events.Sip\MessagingEventTypes.cs" />
+    <Compile Include="DispCore.Events.Sip\RegistrationEventArgs.cs" />
+    <Compile Include="DispCore.Events.Sip\RegistrationEventTypes.cs" />
+    <Compile Include="DispCore.Events.Sip\SubscriptionEventArgs.cs" />
+    <Compile Include="DispCore.Events.Sip\SubscriptionEventTypes.cs" />
+    <Compile Include="DispCore.Events\AccessNetworkEventArgs.cs" />
+    <Compile Include="DispCore.Events\AccessNetworkEventTypes.cs" />
+    <Compile Include="DispCore.Events\AddressListEventArgs.cs" />
+    <Compile Include="DispCore.Events\AddressListEventTypes.cs" />
+    <Compile Include="DispCore.Events\CallEventArgs.cs" />
+    <Compile Include="DispCore.Events\CallEventTypes.cs" />
+    <Compile Include="DispCore.Events\ConfigurationEventArgs.cs" />
+    <Compile Include="DispCore.Events\ContactEventArgs.cs" />
+    <Compile Include="DispCore.Events\ContactEventTypes.cs" />
+    <Compile Include="DispCore.Events\DgnaEventArgs.cs" />
+    <Compile Include="DispCore.Events\DgnaEventTypes.cs" />
+    <Compile Include="DispCore.Events\EventHandlerTrigger.cs" />
+    <Compile Include="DispCore.Events\HeartbeartEventArgs.cs" />
+    <Compile Include="DispCore.Events\HeartbeatEventTypes.cs" />
+    <Compile Include="DispCore.Events\HistoryEventArgs.cs" />
+    <Compile Include="DispCore.Events\HistoryEventTypes.cs" />
+    <Compile Include="DispCore.Events\MessageEventArgs.cs" />
+    <Compile Include="DispCore.Events\MessageEventTypes.cs" />
+    <Compile Include="DispCore.Events\MsrpEventArgs.cs" />
+    <Compile Include="DispCore.Events\MsrpEventTypes.cs" />
+    <Compile Include="DispCore.Events\MyEventArgs.cs" />
+    <Compile Include="DispCore.Events\PttEventArgs.cs" />
+    <Compile Include="DispCore.Events\PttEventTypes.cs" />
+    <Compile Include="DispCore.Events\ServiceOpResultEventArgs.cs" />
+    <Compile Include="DispCore.Events\ServiceSessionChangedEventArgs.cs" />
+    <Compile Include="DispCore.Events\ServiceSessionChangedEventTypes.cs" />
+    <Compile Include="DispCore.Events\StackEventArgs.cs" />
+    <Compile Include="DispCore.Events\StackEventTypes.cs" />
+    <Compile Include="DispCore.Events\StatusEventArgs.cs" />
+    <Compile Include="DispCore.Events\StatusEventTypes.cs" />
+    <Compile Include="DispCore.Events\StringEventArgs.cs" />
+    <Compile Include="DispCore.Events\VideoSendEventArgs.cs" />
+    <Compile Include="DispCore.Events\VideoSendEventTypes.cs" />
+    <Compile Include="DispCore.Events\XcapEventArgs.cs" />
+    <Compile Include="DispCore.Events\XcapEventTypes.cs" />
+    <Compile Include="DispCore.Models.Cfg\CodecsCfg.cs" />
+    <Compile Include="DispCore.Models.Cfg\Configuration.cs" />
+    <Compile Include="DispCore.Models.Cfg\ContactsCfg.cs" />
+    <Compile Include="DispCore.Models.Cfg\GeneralCfg.cs" />
+    <Compile Include="DispCore.Models.Cfg\IdentityCfg.cs" />
+    <Compile Include="DispCore.Models.Cfg\NetworkCfg.cs" />
+    <Compile Include="DispCore.Models.Cfg\PrefVideoSize.cs" />
+    <Compile Include="DispCore.Models.Cfg\QosCfg.cs" />
+    <Compile Include="DispCore.Models.History\AVCallHistory.cs" />
+    <Compile Include="DispCore.Models.History\HistoryChatEvent.cs" />
+    <Compile Include="DispCore.Models.History\HistoryFileTransferEvent.cs" />
+    <Compile Include="DispCore.Models.History\HistoryItem.cs" />
+    <Compile Include="DispCore.Models.History\ShortMessageHistory.cs" />
+    <Compile Include="DispCore.Models.Rls.resource_lists\displaynameType.cs" />
+    <Compile Include="DispCore.Models.Rls.resource_lists\entryrefType.cs" />
+    <Compile Include="DispCore.Models.Rls.resource_lists\entryType.cs" />
+    <Compile Include="DispCore.Models.Rls.resource_lists\entryTypeDisplayname.cs" />
+    <Compile Include="DispCore.Models.Rls.resource_lists\externalType.cs" />
+    <Compile Include="DispCore.Models.Rls.resource_lists\listType.cs" />
+    <Compile Include="DispCore.Models.Rls.resource_lists\listTypeList.cs" />
+    <Compile Include="DispCore.Models.Rls.resource_lists\resourcelists.cs" />
+    <Compile Include="DispCore.Models.Rls\DoubangoProperty.cs" />
+    <Compile Include="DispCore.Models.Sip\EVENTTYPE.cs" />
+    <Compile Include="DispCore.Models.Sip\MyEvent.cs" />
+    <Compile Include="DispCore.Models.Sip\MySubscriptionSession.cs" />
+    <Compile Include="DispCore.Models.Trunk\TrunkAVSession.cs" />
+    <Compile Include="DispCore.Models.Trunk\TrunkCallService.cs" />
+    <Compile Include="DispCore.Models.Trunk\TrunkGrpCallService.cs" />
+    <Compile Include="DispCore.Models.Trunk\TrunkMessageSession.cs" />
+    <Compile Include="DispCore.Models.Trunk\TrunkOnlineCallService.cs" />
+    <Compile Include="DispCore.Models.Trunk\TrunkUserCallService.cs" />
+    <Compile Include="DispCore.Models.Trunk\TrunkVideoDispSession.cs" />
+    <Compile Include="DispCore.Models\CallStatusService.cs" />
+    <Compile Include="DispCore.Models\Camera.cs" />
+    <Compile Include="DispCore.Models\CompSessionIndex.cs" />
+    <Compile Include="DispCore.Models\ContactItem.cs" />
+    <Compile Include="DispCore.Models\Group.cs" />
+    <Compile Include="DispCore.Models\InviteState.cs" />
+    <Compile Include="DispCore.Models\MessageSendingStatus.cs" />
+    <Compile Include="DispCore.Models\MyAVSession.cs" />
+    <Compile Include="DispCore.Models\MyInfoSession.cs" />
+    <Compile Include="DispCore.Models\MyInviteSession.cs" />
+    <Compile Include="DispCore.Models\MyMessageSession.cs" />
+    <Compile Include="DispCore.Models\MyMrspSession.cs" />
+    <Compile Include="DispCore.Models\MyMsrpSession.cs" />
+    <Compile Include="DispCore.Models\MyOptionsSession.cs" />
+    <Compile Include="DispCore.Models\MyPublicationSession.cs" />
+    <Compile Include="DispCore.Models\MyRegistrationSession.cs" />
+    <Compile Include="DispCore.Models\MySipSession.cs" />
+    <Compile Include="DispCore.Models\MySipStack.cs" />
+    <Compile Include="DispCore.Models\MySubscriptionSession.cs" />
+    <Compile Include="DispCore.Models\MyXcapMessage.cs" />
+    <Compile Include="DispCore.Models\MyXcapStack.cs" />
+    <Compile Include="DispCore.Models\Person.cs" />
+    <Compile Include="DispCore.Models\SessionId.cs" />
+    <Compile Include="DispCore.Services.Impl\AccessNetworkService.cs" />
+    <Compile Include="DispCore.Services.Impl\ConfigurationService.cs" />
+    <Compile Include="DispCore.Services.Impl\ContactService.cs" />
+    <Compile Include="DispCore.Services.Impl\HistoryService.cs" />
+    <Compile Include="DispCore.Services.Impl\LogService.cs" />
+    <Compile Include="DispCore.Services.Impl\MySyncXcapCallback.cs" />
+    <Compile Include="DispCore.Services.Impl\ServiceManager.cs" />
+    <Compile Include="DispCore.Services.Impl\ServiceRealizeService.cs" />
+    <Compile Include="DispCore.Services.Impl\StackService.cs" />
+    <Compile Include="DispCore.Services.Impl\StatusService.cs" />
+    <Compile Include="DispCore.Services\ANStatus.cs" />
+    <Compile Include="DispCore.Services\IAccessNetworkService.cs" />
+    <Compile Include="DispCore.Services\IConfigurationService.cs" />
+    <Compile Include="DispCore.Services\IContactService.cs" />
+    <Compile Include="DispCore.Services\IHistoryService.cs" />
+    <Compile Include="DispCore.Services\ILogService.cs" />
+    <Compile Include="DispCore.Services\IScreenService.cs" />
+    <Compile Include="DispCore.Services\IService.cs" />
+    <Compile Include="DispCore.Services\IServiceRealizeService.cs" />
+    <Compile Include="DispCore.Services\ISoundService.cs" />
+    <Compile Include="DispCore.Services\IStackService.cs" />
+    <Compile Include="DispCore.Services\IStatusService.cs" />
+    <Compile Include="DispCore.Services\ServiceArgs.cs" />
+    <Compile Include="DispCore.Services\SessionManager.cs" />
+    <Compile Include="DispCore.Services\Tone.cs" />
+    <Compile Include="DispCore.Trunk.Types\TrunkCallCalledType.cs" />
+    <Compile Include="DispCore.Trunk.Types\TrunkCallDuplex.cs" />
+    <Compile Include="DispCore.Trunk.Types\TrunkCallE2ee.cs" />
+    <Compile Include="DispCore.Trunk.Types\TrunkCallFoaoroacsu.cs" />
+    <Compile Include="DispCore.Trunk.Types\TrunkCallParam.cs" />
+    <Compile Include="DispCore.Trunk.Types\TrunkCallPrioAttr.cs" />
+    <Compile Include="DispCore.Trunk.Types\TrunkCallReleaseReason.cs" />
+    <Compile Include="DispCore.Trunk.Types\TrunkCallType.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkGroupMembTypes.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkGroupStatusTypes.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkGroupTypes.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkMsgOperaterType.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkMsgType.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkUserCallStatusTypes.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkUserCtrlStatusTypes.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkUserRegStatusTypes.cs" />
+    <Compile Include="DispCore.Types.Trunk\TrunkUserTypes.cs" />
+    <Compile Include="DispCore.Types.Trunk\UserAndType.cs" />
+    <Compile Include="DispCore.Types\ContactType.cs" />
+    <Compile Include="DispCore.Types\ContentType.cs" />
+    <Compile Include="DispCore.Types\TrunkDefs.cs" />
+    <Compile Include="DispCore.Types\X686Defs.cs" />
+    <Compile Include="DispCore.Utils.Trunk\TrunkUitls.cs" />
+    <Compile Include="DispCore.Utils\IMActivityIndicationManager.cs" />
+    <Compile Include="DispCore.Utils\IMActivityIndicator.cs" />
+    <Compile Include="DispCore.Utils\MyObservableCollection.cs" />
+    <Compile Include="DispCore.Utils\PresenceStatus.cs" />
+    <Compile Include="DispCore.Utils\Rfc3339DateTime.cs" />
+    <Compile Include="DispCore.Utils\StringUtils.cs" />
+    <Compile Include="DispCore.Utils\UriUtils.cs" />
+    <Compile Include="DispCore\MediaAttr.cs" />
+    <Compile Include="DispCore\MediaType.cs" />
+    <Compile Include="DispCore\MediaTypeUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\doubango\doubango.csproj">
+      <Project>{74dee506-9700-4a7d-9cd0-e7d79a72542b}</Project>
+      <Name>doubango</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
