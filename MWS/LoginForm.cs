@@ -30,11 +30,8 @@ namespace MWS
             Win32ServiceManager.SharedManager.AccessNetworkService.Register();
 
 
-            Win32ServiceManager.SharedManager.Win32ScreenService.ScreenAuthentication.Hide();
-            Win32ServiceManager.SharedManager.Win32ScreenService.ScreenMain.Show();
-
-            //this.DialogResult = DialogResult.OK;
-            //this.Close();
+            Win32ServiceManager.SharedManager.Win32ScreenService.ScreenAuthentication.DialogResult = DialogResult.OK;
+            Win32ServiceManager.SharedManager.Win32ScreenService.ScreenAuthentication.Close();
         }
     }
 }

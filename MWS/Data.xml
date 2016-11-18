@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <menu>
+    <item name="执勤态势" code="zqts" type="link" parameter="http://www.baidu.com/"/>
+    <item name="监控对讲" code="jkdj" type="button" parameter=""/>
+    <item name="哨位监控" code="swjk" type="button" parameter=""/>
+    <item name="报警日志" code="bjrz" type="url" parameter=""/>
+    <item name="收发消息" code="sfxx" type="url" parameter=""/>
+    <item name="记录查哨" code="jlcs" type="url" parameter=""/>
+    <item name="录播回放" code="lbhf" type="url" parameter=""/>
+    <item name="登记排班" code="djpb" type="url" parameter=""/>
+    <item name="通信录" code="txl" type="url" parameter=""/>
+  </menu>
+  <camera>
+    <item name="东一" NO="10001" />
+    <item name="东二" NO="10002" />
+    <item name="东三" NO="10003" />
+    <item name="东四" NO="10004" />
+    <item name="东五" NO="10005" />
+    <item name="东六" NO="10006" />
+    <item name="东七" NO="10007" />
+    <item name="东八" NO="10008" />
+  </camera>
+  <user>
+    <item name="丁一" NO="10001" />
+    <item name="郑二" NO="10002" />
+    <item name="张三" NO="10003" />
+    <item name="赵四" NO="10004" />
+    <item name="王五" NO="10005" />
+    <item name="李六" NO="10006" />
+    <item name="孙七" NO="10007" />
+    <item name="刘八" NO="10008" />
+  </user>
+  <!--layout value 表示总共几幅画面，横向显示几个画面-->
+  <layout>
+    <item name="单画面" value="1-1" />
+    <item name="双画面" value="2-2"/>
+    <item name="三画面" value="3-3"/>
+    <item name="四画面" value="4-2"/>
+    <item name="五画面" value="5-3"/>
+    <item name="六画面" value="6-3"/>
+    <item name="七画面" value="7-3"/>
+    <item name="八画面" value="8-4"/>
+    <item name="九画面" value="9-3"/>
+  </layout>
+</root>

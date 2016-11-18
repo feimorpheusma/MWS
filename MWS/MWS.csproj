@@ -51,6 +51,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,10 @@
     <Compile Include="Utils\MySoundPlayer.cs" />
     <Compile Include="Utils\NativeMethods.cs" />
     <Compile Include="Utils\VideoDisplay.cs" />
+    <Compile Include="XMLModel.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,9 +170,13 @@
     <None Include="Resources\photo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Menu.xml">
+    <Content Include="Warning.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\bg_mask.png" />
     <None Include="Resources\bg_login_form.png" />
     <None Include="Resources\bg_video.png" />
     <None Include="Resources\bg_title.png" />

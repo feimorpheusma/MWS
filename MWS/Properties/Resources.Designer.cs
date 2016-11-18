@@ -148,6 +148,16 @@ namespace MWS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_mask {
+            get {
+                object obj = ResourceManager.GetObject("bg_mask", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_title {
             get {
                 object obj = ResourceManager.GetObject("bg_title", resourceCulture);
