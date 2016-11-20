@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace MWS
         public LoginForm()
         {
             InitializeComponent();
+            lblTitle.Text = ConfigurationManager.AppSettings["SystemName"];
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

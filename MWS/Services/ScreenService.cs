@@ -50,18 +50,18 @@ namespace MWS.Services
             //    return;
             //}
 
-            switch (e.Type)
-            {
-                case AccessNetworkEventTypes.ANET_LOGIN:
-                    switch (e.Status)
-                    {
-                        case ANStatus.INSERVICE:
-                            ScreenAuthentication.Hide();
-                            ScreenMain.Show();
-                            break;
-                    }
-                    break;
-            }
+            //switch (e.Type)
+            //{
+            //    case AccessNetworkEventTypes.ANET_LOGIN:
+            //        switch (e.Status)
+            //        {
+            //            case ANStatus.INSERVICE:
+            //                ScreenAuthentication.Hide();
+            //                ScreenMain.Show();
+            //                break;
+            //        }
+            //        break;
+            //}
         }
 
         #region setter/getter

@@ -38,6 +38,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -83,7 +84,7 @@
     <Compile Include="Utils\MySoundPlayer.cs" />
     <Compile Include="Utils\NativeMethods.cs" />
     <Compile Include="Utils\VideoDisplay.cs" />
-    <Compile Include="XMLModel.cs" />
+    <Compile Include="Utils\XMLModel.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -113,7 +113,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(247, 22);
             this.txtUserName.TabIndex = 1;
-            this.txtUserName.Text = "188000050001";
+            this.txtUserName.Text = "10001";
             // 
             // txtIP
             // 

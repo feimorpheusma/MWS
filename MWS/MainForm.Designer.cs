@@ -55,6 +55,7 @@
             this.lbUsers = new System.Windows.Forms.ListBox();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pbxAvatar = new System.Windows.Forms.PictureBox();
@@ -63,12 +64,13 @@
             this.pnlMask = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCloseWarning = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtStatusWarning = new System.Windows.Forms.TextBox();
+            this.pnlWarning = new System.Windows.Forms.Panel();
             this.btnCloseWarningMask = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlContainer.SuspendLayout();
             this.pnlMinitor.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -126,6 +128,7 @@
             // 
             this.pnlContainer.BackgroundImage = global::MWS.Properties.Resources.bg_login;
             this.pnlContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlContainer.Controls.Add(this.pnlMinitor);
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 109);
             this.pnlContainer.Name = "pnlContainer";
@@ -232,7 +235,7 @@
             this.lbCameras.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lbCameras.Size = new System.Drawing.Size(191, 576);
             this.lbCameras.TabIndex = 0;
-            this.lbCameras.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbCameras_MouseClick);
+            this.lbCameras.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbCameras_MouseDoubleClick);
             // 
             // pnlIntercom
             // 
@@ -283,6 +286,7 @@
             // 
             // txtStatus
             // 
+            this.txtStatus.Enabled = false;
             this.txtStatus.Location = new System.Drawing.Point(12, 348);
             this.txtStatus.Multiline = true;
             this.txtStatus.Name = "txtStatus";
@@ -361,6 +365,7 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::MWS.Properties.Resources.header;
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.pnlMenu);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -368,6 +373,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1354, 73);
             this.panel1.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(68, 18);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(231, 35);
+            this.lblTitle.TabIndex = 3;
+            this.lblTitle.Text = "执勤调度信息系统";
             // 
             // pnlMenu
             // 
@@ -410,7 +427,7 @@
             this.pictureBox1.Image = global::MWS.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(303, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(54, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -436,8 +453,8 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.btnCloseWarning);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.txtStatusWarning);
+            this.panel3.Controls.Add(this.pnlWarning);
             this.panel3.Controls.Add(this.btnCloseWarningMask);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(412, 137);
@@ -460,22 +477,23 @@
             this.btnCloseWarning.UseVisualStyleBackColor = true;
             this.btnCloseWarning.Click += new System.EventHandler(this.btnCloseWarning_Click);
             // 
-            // textBox1
+            // txtStatusWarning
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 352);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(435, 88);
-            this.textBox1.TabIndex = 3;
+            this.txtStatusWarning.Enabled = false;
+            this.txtStatusWarning.Location = new System.Drawing.Point(17, 352);
+            this.txtStatusWarning.Multiline = true;
+            this.txtStatusWarning.Name = "txtStatusWarning";
+            this.txtStatusWarning.Size = new System.Drawing.Size(435, 88);
+            this.txtStatusWarning.TabIndex = 3;
             // 
-            // panel7
+            // pnlWarning
             // 
-            this.panel7.BackgroundImage = global::MWS.Properties.Resources.bg_video;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Location = new System.Drawing.Point(17, 52);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(435, 293);
-            this.panel7.TabIndex = 2;
+            this.pnlWarning.BackgroundImage = global::MWS.Properties.Resources.bg_video;
+            this.pnlWarning.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlWarning.Location = new System.Drawing.Point(17, 52);
+            this.pnlWarning.Name = "pnlWarning";
+            this.pnlWarning.Size = new System.Drawing.Size(435, 293);
+            this.pnlWarning.TabIndex = 2;
             // 
             // btnCloseWarningMask
             // 
@@ -515,6 +533,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlContainer.ResumeLayout(false);
             this.pnlMinitor.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -528,6 +547,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -573,10 +593,11 @@
         private System.Windows.Forms.Panel pnlMask;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnCloseWarning;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox txtStatusWarning;
+        private System.Windows.Forms.Panel pnlWarning;
         private System.Windows.Forms.Button btnCloseWarningMask;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
 

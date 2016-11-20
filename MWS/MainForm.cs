@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using DispCore.Models;
 using System.Collections.Specialized;
 using org.doubango.tinyWRAP;
+using System.Configuration;
 
 namespace MWS
 {
@@ -33,6 +34,12 @@ namespace MWS
         bool[] isVideoViewAttached;
         MyAVSession[] sessionAttached2VideoView;
 
+        Panel currentVedioPanel;
+
+        List<CameraInfo> currentCameras;
+
+        Dictionary<string, Panel> cameraPanelGroup;
+
         #endregion
 
         public MainForm()
@@ -43,6 +50,12 @@ namespace MWS
             initializeUser();
             initializeCamera();
             initializeLayout();
+
+            this.Text = ConfigurationManager.AppSettings["SystemName"];
+            lblTitle.Text = ConfigurationManager.AppSettings["SystemName"];
+
+            cameraPanelGroup = new Dictionary<string, Panel>();
+            this.lbCameras.SelectedItems.Clear();
 
             sessions = new ObservableCollection<MyAVSession>();
             isVideoViewAttached = new bool[2] { false, false };
@@ -65,22 +78,15 @@ namespace MWS
 
                         sessions.Insert(0, avSession);
 
-                        txtStatus.Text = avSession.Code + "\r\n" + txtStatus.Text;
+                        txtStatus.Text = getSessionState(avSession.State, avSession.Code) + "\r\n" + txtStatus.Text;
 
                         if ((avSession.MediaType & DispCore.MediaType.Video) == DispCore.MediaType.Video)
                         {
-                            if (!isVideoViewAttached[0])
-                            {
-                                avSession.MediaSessionMgr.consumerSetInt64(twrap_media_type_t.twrap_media_video, "remote-hwnd", (Int64)pnlVideo1.Handle);
-                            }
-                            else if (!isVideoViewAttached[1])
-                            {
-                                avSession.MediaSessionMgr.consumerSetInt64(twrap_media_type_t.twrap_media_video, "remote-hwnd", (Int64)pnlVideo2.Handle);
-                            }
+                            avSession.MediaSessionMgr.consumerSetInt64(twrap_media_type_t.twrap_media_video, "remote-hwnd", (Int64)currentVedioPanel.Handle);
                         }
 
 
-                        //avSession.PropertyChanged += OnAvSessionPropertyChanged;
+                        avSession.PropertyChanged += OnAvSessionPropertyChanged;
                         /* play incoming call ring tone */
                         Win32ServiceManager.SharedManager.SoundService.PlayTone(DispCore.Services.Tone.TONE_RING, true, avSession.Id);
                     }
@@ -91,30 +97,63 @@ namespace MWS
                     {
                         avSession = (MyAVSession)item;
                         sessions.Remove(avSession);
-
-                        // @TODO: 根据sessions更新datagridview的内容
                     }
+                    break;
+
+                case NotifyCollectionChangedAction.Reset:
+                    sessions.Clear();
+                    break;
+                default:
                     break;
             }
         }
 
         public void OnAvSessionPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            MyAVSession avSession = (MyAVSession)sender;
+            var session = (MyAVSession)sender;
 
-            if ((e.PropertyName == "State") && (avSession.State == InviteState.INCALL))
+            if ((e.PropertyName == "State"))
             {
-                if ((avSession.MediaType & DispCore.MediaType.Video) == DispCore.MediaType.Video)
+
+                if (currentVedioPanel == pnlWarning)
+                {
+                    txtStatusWarning.Text = getSessionState(session.State, session.Code) + "\r\n" + txtStatusWarning.Text;
+
+                }
+                else if (currentVedioPanel == pnlVideo1 || currentVedioPanel == pnlVideo2)
+                {
+                    txtStatus.Text = getSessionState(session.State, session.Code) + "\r\n" + txtStatus.Text;
+                }
+
+
+                if ((session.MediaType & DispCore.MediaType.Video) == DispCore.MediaType.Video)
                 {
 
                 }
             }
+
+            //if ((e.PropertyName == "State") && (session.State == InviteState.INCALL))
+            //{
+            //    /* 显示远端视频 */
+            //    AttachRemoteVideo();
+            //    this.IsVideoAttached = true;
+            //}
+            //if ((e.PropertyName == "State") && (session.State == InviteState.TERMINATED))
+            //{
+            //    this.IsVideoAttached = false;
+            //}
+            //this.OnPropertyChanged(e.PropertyName);
+        }
+
+        public void AttachRemoteVideo()
+        {
+            //((MyAVSession)session.WrappedObject).MediaSessionMgr.consumerSetInt64(twrap_media_type_t.twrap_media_video, "remote-hwnd", (Int64)RemoteVideoHandle);
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
             var menu = MenuList.FirstOrDefault(m => m.Name == ((Button)sender).Text);
-
+            lblLocation.Text = menu.Name;
             if (menu.Type == "link")
             {
                 this.pnlContainer.Controls.Add(this.webBrowser);
@@ -144,6 +183,8 @@ namespace MWS
                 }
             }
 
+            releaseAllCalls();
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -153,15 +194,58 @@ namespace MWS
 
         private void lbUsers_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var selectedItem = (sender as ListBox).SelectedItem;
+            var selectedItem = (sender as ListBox).SelectedItem as UserInfo;
             if (selectedItem != null)
             {
-                Win32ServiceManager.SharedManager.ServiceRealizeService.VideoCall(selectedItem.ToString());
+                if (!isVideoViewAttached[0])
+                {
+                    isVideoViewAttached[0] = true;
+
+                    currentVedioPanel = pnlVideo1;
+                    Win32ServiceManager.SharedManager.ServiceRealizeService.VideoCall(selectedItem.NO.ToString());
+                }
+                else if (!isVideoViewAttached[1])
+                {
+                    isVideoViewAttached[1] = true;
+
+                    currentVedioPanel = pnlVideo2;
+                    Win32ServiceManager.SharedManager.ServiceRealizeService.VideoCall(selectedItem.NO.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("最多开启两个对讲");
+                }
             }
         }
 
         private void lbCameras_MouseClick(object sender, MouseEventArgs e)
         {
+        }
+        private void lbCameras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void lbCameras_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            foreach (CameraInfo item in (sender as ListBox).SelectedItems)
+            {
+                if (cameraPanelGroup.Any(c => c.Key == item.NO) == false)
+                {
+                    if (pnlCameraContainer.Controls.Count > cameraPanelGroup.Count)
+                    {
+                        var nextCameraPanel = pnlCameraContainer.Controls[cameraPanelGroup.Count] as Panel;
+                        cameraPanelGroup.Add(item.NO, nextCameraPanel);
+                        currentVedioPanel = nextCameraPanel;
+
+                        Win32ServiceManager.SharedManager.ServiceRealizeService.VideoCall(item.NO);
+                    }
+                    else
+                    {
+                        MessageBox.Show("画面不足，请选择多画面");
+                    }
+                }
+            }
+
         }
 
         private void cbxLayout_SelectedIndexChanged(object sender, EventArgs e)
@@ -185,9 +269,13 @@ namespace MWS
                 var xe = (XmlElement)node;
                 var NO = xe.GetAttribute("NO");
                 var status = xe.GetAttribute("status");
-                if (status == "0")
+                if (status == "0" && string.IsNullOrEmpty(NO) == false)
                 {
                     //TODO: add vedio screen
+
+                    currentVedioPanel = pnlWarning;
+                    Win32ServiceManager.SharedManager.ServiceRealizeService.VideoCall(NO);
+
                     CurrentWainingId = int.Parse(xe.GetAttribute("id"));
                     this.Controls.Add(this.pnlMask);
                     this.pnlMask.BringToFront();
@@ -229,6 +317,74 @@ namespace MWS
 
 
         #region private methods
+
+        private string getSessionState(InviteState state, int code = 0)
+        {
+
+            switch (state)
+            {
+                case InviteState.INCOMING:
+                    return "来话";
+
+                case InviteState.INPROGRESS:
+                    return "呼叫进展中";
+
+                case InviteState.INCALL:
+                    return "通话中";
+
+                case InviteState.REMOTE_RINGING:
+                    return "振铃中";
+
+                case InviteState.LOCAL_HELD:
+                    return "本端保持";
+
+                case InviteState.REMOTE_HELD:
+                    return "远端保持";
+
+                case InviteState.TERMINATED:
+                    {
+                        switch (code)
+                        {
+                            case 403:
+                                return "不允许呼叫";
+
+                            case 404:
+                                return "用户不存在";
+
+                            case 406:
+                                return "来话不可接听";
+
+                            case 415:
+                                return "媒体不支持";
+
+                            case 480:
+                                return "用户不可达";
+
+                            case 486:
+                                return "用户忙";
+
+                            case 503:
+                                return "服务不可用";
+
+                            default:
+                                return "通话已结束";
+                        }
+                    }
+                default:
+                    return "通话已结束";
+            }
+
+        }
+
+        private void releaseAllCalls()
+        {
+            foreach (var session in sessions)
+            {
+                Win32ServiceManager.SharedManager.SoundService.StopPlay(session.Id);
+                Win32ServiceManager.SharedManager.ServiceRealizeService.ReleaseCall(session.Id);
+            }
+        }
+
 
         private void initializeMenu()
         {
@@ -419,6 +575,8 @@ namespace MWS
         }
 
         #endregion
+
+
 
 
     }
