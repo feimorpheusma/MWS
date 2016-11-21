@@ -128,7 +128,7 @@
             // 
             this.pnlContainer.BackgroundImage = global::MWS.Properties.Resources.bg_login;
             this.pnlContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlContainer.Controls.Add(this.pnlMinitor);
+            //this.pnlContainer.Controls.Add(this.pnlMinitor);
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 109);
             this.pnlContainer.Name = "pnlContainer";
