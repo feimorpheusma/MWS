@@ -12,24 +12,24 @@
     <item name="通信录" code="txl" type="url" parameter=""/>
   </menu>
   <camera>
-    <item name="东一" NO="10001" />
-    <item name="东二" NO="10002" />
-    <item name="东三" NO="10003" />
-    <item name="东四" NO="10004" />
-    <item name="东五" NO="10005" />
-    <item name="东六" NO="10006" />
-    <item name="东七" NO="10007" />
-    <item name="东八" NO="10008" />
+    <item name="18899990001 东一" NO="18899990001" />
+    <item name="18899990002 东二" NO="18899990002" />
+    <item name="18899990003 东三" NO="18899990003" />
+    <item name="18899990004 东四" NO="18899990004" />
+    <item name="18899990005 东五" NO="18899990005" />
+    <item name="18899990006 东六" NO="18899990006" />
+    <item name="18899990007 东七" NO="18899990007" />
+    <item name="18899990008 东八" NO="18899990008" />
   </camera>
   <user>
-    <item name="丁一" NO="10001" />
-    <item name="郑二" NO="10002" />
-    <item name="张三" NO="10003" />
-    <item name="赵四" NO="10004" />
-    <item name="王五" NO="10005" />
-    <item name="李六" NO="10006" />
-    <item name="孙七" NO="10007" />
-    <item name="刘八" NO="10008" />
+    <item name="10001 丁一" NO="10001" />
+    <item name="10002 郑二" NO="10002" />
+    <item name="10003 张三" NO="10003" />
+    <item name="10004 赵四" NO="10004" />
+    <item name="10005 王五" NO="10005" />
+    <item name="10006 李六" NO="10006" />
+    <item name="10007 孙七" NO="10007" />
+    <item name="10008 刘八" NO="10008" />
   </user>
   <!--layout value 表示总共几幅画面，横向显示几个画面-->
   <layout>

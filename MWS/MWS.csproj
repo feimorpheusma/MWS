@@ -171,6 +171,7 @@
     <None Include="Resources\photo.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\menu_lbhf1.png" />
     <Content Include="Warning.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

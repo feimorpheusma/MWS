@@ -21,9 +21,6 @@ namespace MWS
             //Application.Run(new Form1());
             //return;
 
-            String log4net = String.Format(MWS.Properties.Resources.log4net, Win32ServiceManager.SharedManager.ApplicationDataPath);
-            using (Stream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(log4net)))
-                Win32ServiceManager.SharedManager.Start();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -32,6 +29,20 @@ namespace MWS
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
 
+
+
+
+            //Win32ServiceManager.SharedManager.ConfigurationService.NetworkCfg.IpVersion = "IPv4";
+            //Win32ServiceManager.SharedManager.ConfigurationService.NetworkCfg.LocalIP = "192.168.12.33";
+            //Win32ServiceManager.SharedManager.ConfigurationService.NetworkCfg.LocalPort = "5060";
+            //Win32ServiceManager.SharedManager.ConfigurationService.NetworkCfg.Realm = "test.com";
+            //Win32ServiceManager.SharedManager.ConfigurationService.NetworkCfg.ProxyHost = "192.168.12.154";
+            //Win32ServiceManager.SharedManager.ConfigurationService.NetworkCfg.ProxyPort = "4060";
+            //Win32ServiceManager.SharedManager.ConfigurationService.NetworkCfg.Transport = "UDP";
+
+            String log4net = String.Format(MWS.Properties.Resources.log4net, Win32ServiceManager.SharedManager.ApplicationDataPath);
+            using (Stream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(log4net)))
+                Win32ServiceManager.SharedManager.Start();
 
             //Application.Run(new LoginForm());
             var loginForm = new LoginForm();

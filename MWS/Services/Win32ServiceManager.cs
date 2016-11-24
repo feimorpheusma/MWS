@@ -97,7 +97,7 @@ namespace MWS.Services
             MediaSessionMgr.defaultsSetOpusMaxPlaybackRate(48000);
             MediaSessionMgr.defaultsSetAudioChannels(1, 1);         // mono for both
             MediaSessionMgr.defaultsSetAudioPtime(20);
-                      // default video FPS. Will be updated using the SDP.
+            // default video FPS. Will be updated using the SDP.
             MediaSessionMgr.defaultsSetAvpfMode(tmedia_mode_t.tmedia_mode_none);
             MediaSessionMgr.defaultsSetBandwidthVideoDownloadMax(-1);
             MediaSessionMgr.defaultsSetBandwidthVideoUploadMax(-1);
@@ -105,7 +105,9 @@ namespace MWS.Services
                (tmedia_pref_video_size_t)Enum.Parse(typeof(tmedia_pref_video_size_t), this.configurationService.Get(Configuration.ConfFolder.QOS, Configuration.ConfEntry.PREF_VIDEO_SIZE, Configuration.DEFAULT_QOS_PREF_VIDEO_SIZE), true)
                );
             int fps = this.configurationService.Get(Configuration.ConfFolder.QOS, Configuration.ConfEntry.VIDEO_FPS, 12);
-            MediaSessionMgr.defaultsSetVideoFps(fps);     
+            MediaSessionMgr.defaultsSetVideoFps(fps);
+
+            MediaSessionMgr.defaultsSetScreenSize(352, 288);
             return ret;
         }
 
@@ -119,7 +121,7 @@ namespace MWS.Services
 
             ret &= this.AccessNetworkService.Stop();
             ret &= this.StackService.Stop();
-             return ret;
+            return ret;
         }
 
         public override String ApplicationDataPath

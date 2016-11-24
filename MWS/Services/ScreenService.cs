@@ -9,6 +9,7 @@ using MWS.Services;
 using DispCore.Services;
 using DispCore.Utils;
 using MWS;
+using System.Windows.Forms;
 
 namespace MWS.Services
 {
@@ -50,18 +51,21 @@ namespace MWS.Services
             //    return;
             //}
 
-            //switch (e.Type)
-            //{
-            //    case AccessNetworkEventTypes.ANET_LOGIN:
-            //        switch (e.Status)
-            //        {
-            //            case ANStatus.INSERVICE:
-            //                ScreenAuthentication.Hide();
-            //                ScreenMain.Show();
-            //                break;
-            //        }
-            //        break;
-            //}
+            switch (e.Type)
+            {
+                case AccessNetworkEventTypes.ANET_LOGIN:
+                    switch (e.Status)
+                    {
+                        case ANStatus.INSERVICE:
+
+                            Win32ServiceManager.SharedManager.Win32ScreenService.ScreenAuthentication.DialogResult = DialogResult.OK;
+                            Win32ServiceManager.SharedManager.Win32ScreenService.ScreenAuthentication.Close();
+                            //ScreenAuthentication.Hide();
+                            //ScreenMain.Show();
+                            break;
+                    }
+                    break;
+            }
         }
 
         #region setter/getter
